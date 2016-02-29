@@ -1,5 +1,6 @@
 package com.example.mizuno.prog_wifiinfo;
 
+import android.content.Intent;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ public class WiFiInfoActivity extends AppCompatActivity {
 
         Button button = (Button)findViewById(R.id.button);
         Button button2 = (Button)findViewById(R.id.button2);
+        Button button3 = (Button)findViewById(R.id.button3);
         listView = (ListView)findViewById(R.id.listView);
         ArrayAdapter<String> adapter;
 
@@ -58,6 +60,14 @@ public class WiFiInfoActivity extends AppCompatActivity {
                 asynchttp = new AsyncHttp(android.provider.Settings.Secure.getString(getContentResolver(), android.provider.Settings.Secure.ANDROID_ID));
                 asynchttp.execute(info.getSSID(), ip_addr, String.valueOf(info.getMacAddress()), String.valueOf(info.getRssi()));
 
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WiFiInfoActivity.this, WiFiRecordActivity.class);
+                startActivity(intent);
             }
         });
     }

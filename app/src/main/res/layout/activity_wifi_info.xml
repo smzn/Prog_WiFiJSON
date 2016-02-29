@@ -28,4 +28,12 @@
         android:id="@+id/button2"
         android:layout_below="@+id/listView"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="WiFi履歴"
+        android:id="@+id/button3"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
